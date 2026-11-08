@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max Harnot – Landscape Photography</title>
+<meta name="description" content="Max Harnot – Landschaftsfotografie / Landscape Photography. Kontakt: maxharnot@gmail.com, Instagram @maxharnot">
+<meta property="og:title" content="Max Harnot – Landscape Photography">
+<meta property="og:image" content="hero.jpg">
+<style>
+  :root { --fg:#f4f1ea; --muted:rgba(244,241,234,.72); --line:rgba(244,241,234,.28); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { height:100%; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:var(--fg); background:#111;
+    -webkit-font-smoothing:antialiased;
+  }
+  .hero {
+    position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end;
+    padding:28px 24px 36px;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.25) 40%, rgba(0,0,0,.82) 100%),
+      url("hero.jpg") center/cover no-repeat, #2a2f33;
+  }
+  @media (min-aspect-ratio: 3/4) {
+    body { background:#0c0c0c; }
+    .hero { max-width:calc(100svh * 0.6667); margin:0 auto; position:relative; }
+  }
+  .lang { position:absolute; top:20px; right:20px; display:flex; gap:4px; }
+  .lang button {
+    background:none; border:1px solid var(--line); color:var(--muted);
+    font:inherit; font-size:12px; letter-spacing:.12em; padding:6px 10px; cursor:pointer; border-radius:2px;
+  }
+  .lang button[aria-pressed="true"] { color:var(--fg); border-color:var(--fg); }
+  .wrap { max-width:560px; width:100%; margin:0 auto; }
+  .kicker { font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-weight:400; font-size:clamp(40px, 11vw, 64px); line-height:1.02; margin:10px 0 18px; }
+  .bio { font-size:16px; line-height:1.55; color:var(--muted); margin-bottom:26px; }
+  .actions { display:flex; flex-direction:column; gap:10px; margin-bottom:30px; }
+  .btn {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:15px 18px; border:1px solid var(--line); border-radius:2px;
+    color:var(--fg); text-decoration:none; font-size:15px; letter-spacing:.02em;
+    background:rgba(0,0,0,.25); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    transition:background .2s, border-color .2s;
+  }
+  .btn:hover, .btn:focus-visible { background:rgba(244,241,234,.1); border-color:var(--fg); }
+  .btn span:last-child { color:var(--muted); font-size:14px; }
+  .expo { border-top:1px solid var(--line); padding-top:18px; font-size:14px; line-height:1.6; color:var(--muted); }
+  .expo strong { display:block; color:var(--fg); font-weight:400; font-family: Georgia, serif; font-size:17px; margin-bottom:4px; }
+  footer { font-size:11px; color:rgba(244,241,234,.45); margin-top:22px; letter-spacing:.04em; }
+  [data-en] { display:none; }
+  html[lang="en"] [data-de] { display:none; }
+  html[lang="en"] [data-en] { display:revert; }
+</style>
+</head>
+<body>
+<main class="hero">
+  <div class="lang" role="group" aria-label="Sprache / Language">
+    <button type="button" data-set="de" aria-pressed="true">DE</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+  </div>
+
+  <div class="wrap">
+    <p class="kicker"><span data-de>Landschaftsfotografie</span><span data-en>Landscape Photography</span></p>
+    <h1>Max Harnot</h1>
+    <p class="bio">
+      <span data-de>Landschafts- und Bergfotograf aus München. Ich fotografiere Licht in den Bergen – zwischen Sonnenaufgang, Nebel und Sternen.</span>
+      <span data-en>Landscape and mountain photographer based in Munich. I photograph light in the mountains – between sunrise, mist and stars.</span>
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="mailto:maxharnot@gmail.com">
+        <span>E-Mail</span><span>maxharnot@gmail.com</span>
+      </a>
+      <a class="btn" href="https://www.instagram.com/maxharnot/" target="_blank" rel="noopener">
+        <span>Instagram</span><span>@maxharnot</span>
+      </a>
+    </div>
+
+    <div class="expo">
+      <strong>Fascination of Light. The Art of Landscape Photography</strong>
+      <span data-de>Ausstellung · Immathalle der TUM, München<br>10.–22. November 2026 · täglich 10–19 Uhr</span>
+      <span data-en>Exhibition · Immathalle, TUM, Munich<br>10–22 November 2026 · daily 10 am – 7 pm</span>
+    </div>
+
+    <footer>© 2026 Max Harnot</footer>
+  </div>
+</main>
+<script>
+  (function () {
+    var root = document.documentElement;
+    function set(l) {
+      root.lang = l;
+      document.querySelectorAll('.lang button').forEach(function (b) {
+        b.setAttribute('aria-pressed', b.dataset.set === l ? 'true' : 'false');
+      });
+    }
+    var nav = (navigator.language || 'de').toLowerCase();
+    set(nav.indexOf('de') === 0 ? 'de' : 'en');
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.addEventListener('click', function () { set(b.dataset.set); });
+    });
+  })();
+</script>
+</body>
+</html>
