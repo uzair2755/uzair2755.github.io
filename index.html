@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Max Harnot – Landscape Photography</title>
-<meta name="description" content="Max Harnot – Landschaftsfotografie / Landscape Photography. Kontakt: maxharnot@gmail.com, Instagram @maxharnot">
+<meta name="description" content="Max Harnot – Landscape Photography. Contact: maxharnot@gmail.com, Instagram @maxharnot">
 <meta property="og:title" content="Max Harnot – Landscape Photography">
 <meta property="og:image" content="hero.jpg">
 <style>
@@ -18,21 +18,15 @@
   }
   .hero {
     position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end;
-    padding:28px 24px 36px;
+    padding:28px 24px 28px;
     background:
       linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.25) 40%, rgba(0,0,0,.82) 100%),
       url("hero.jpg") center/cover no-repeat, #2a2f33;
   }
   @media (min-aspect-ratio: 3/4) {
     body { background:#0c0c0c; }
-    .hero { max-width:calc(100svh * 0.6667); margin:0 auto; position:relative; }
+    .hero { max-width:calc(100svh * 0.6667); margin:0 auto; }
   }
-  .lang { position:absolute; top:20px; right:20px; display:flex; gap:4px; }
-  .lang button {
-    background:none; border:1px solid var(--line); color:var(--muted);
-    font:inherit; font-size:12px; letter-spacing:.12em; padding:6px 10px; cursor:pointer; border-radius:2px;
-  }
-  .lang button[aria-pressed="true"] { color:var(--fg); border-color:var(--fg); }
   .wrap { max-width:560px; width:100%; margin:0 auto; }
   .kicker { font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); }
   h1 { font-family: Georgia, "Times New Roman", serif; font-weight:400; font-size:clamp(40px, 11vw, 64px); line-height:1.02; margin:10px 0 18px; }
@@ -48,31 +42,26 @@
   .btn:hover, .btn:focus-visible { background:rgba(244,241,234,.1); border-color:var(--fg); }
   .btn span:last-child { color:var(--muted); font-size:14px; }
   .expo { border-top:1px solid var(--line); padding-top:18px; font-size:14px; line-height:1.6; color:var(--muted); }
-  .expo strong { display:block; color:var(--fg); font-weight:400; font-family: Georgia, serif; font-size:17px; margin-bottom:4px; }
-  footer { font-size:11px; color:rgba(244,241,234,.45); margin-top:22px; letter-spacing:.04em; }
-  [data-en] { display:none; }
-  html[lang="en"] [data-de] { display:none; }
-  html[lang="en"] [data-en] { display:revert; }
+  .expo strong { display:block; color:var(--fg); font-weight:400; font-family: Georgia, serif; font-size:18px; line-height:1.35; margin-bottom:6px; }
+  .lang { display:flex; flex-wrap:wrap; gap:4px; margin-top:22px; }
+  .lang button {
+    background:none; border:1px solid transparent; color:rgba(244,241,234,.55);
+    font:inherit; font-size:11px; letter-spacing:.12em; padding:5px 7px; cursor:pointer; border-radius:2px;
+  }
+  .lang button[aria-pressed="true"] { color:var(--fg); border-color:var(--line); }
+  footer { font-size:11px; color:rgba(244,241,234,.45); margin-top:14px; letter-spacing:.04em; }
 </style>
 </head>
 <body>
 <main class="hero">
-  <div class="lang" role="group" aria-label="Sprache / Language">
-    <button type="button" data-set="de" aria-pressed="true">DE</button>
-    <button type="button" data-set="en" aria-pressed="false">EN</button>
-  </div>
-
   <div class="wrap">
-    <p class="kicker"><span data-de>Landschaftsfotografie</span><span data-en>Landscape Photography</span></p>
+    <p class="kicker" data-i18n="kicker"></p>
     <h1>Max Harnot</h1>
-    <p class="bio">
-      <span data-de>Landschafts- und Bergfotograf aus München. Ich fotografiere Licht in den Bergen – zwischen Sonnenaufgang, Nebel und Sternen.</span>
-      <span data-en>Landscape and mountain photographer based in Munich. I photograph light in the mountains – between sunrise, mist and stars.</span>
-    </p>
+    <p class="bio" data-i18n="bio"></p>
 
     <div class="actions">
       <a class="btn" href="mailto:maxharnot@gmail.com">
-        <span>E-Mail</span><span>maxharnot@gmail.com</span>
+        <span data-i18n="mail"></span><span>maxharnot@gmail.com</span>
       </a>
       <a class="btn" href="https://www.instagram.com/maxharnot/" target="_blank" rel="noopener">
         <span>Instagram</span><span>@maxharnot</span>
@@ -80,27 +69,70 @@
     </div>
 
     <div class="expo">
-      <strong>Fascination of Light. The Art of Landscape Photography</strong>
-      <span data-de>Ausstellung · Immathalle der TUM, München<br>10.–22. November 2026 · täglich 10–19 Uhr</span>
-      <span data-en>Exhibition · Immathalle, TUM, Munich<br>10–22 November 2026 · daily 10 am – 7 pm</span>
+      <strong>Fascination of Light.<br>The Art of Landscape Photography</strong>
+      <span data-i18n="expo"></span><br>
+      <span data-i18n="dates"></span>
     </div>
 
+    <nav class="lang" aria-label="Language">
+      <button type="button" data-set="de">DE</button>
+      <button type="button" data-set="en">EN</button>
+      <button type="button" data-set="pl">PL</button>
+      <button type="button" data-set="es">ES</button>
+      <button type="button" data-set="pt">PT</button>
+      <button type="button" data-set="it">IT</button>
+      <button type="button" data-set="fr">FR</button>
+    </nav>
     <footer>© 2026 Max Harnot</footer>
   </div>
 </main>
 <script>
+  var T = {
+    de: { kicker:"Landschaftsfotografie", mail:"E-Mail",
+          bio:"Landschafts- und Bergfotograf aus München. Ich fotografiere Licht in den Bergen – zwischen Sonnenaufgang, Nebel und Sternen.",
+          expo:"Ausstellung · Immathalle der TUM, München", dates:"10.–22. November 2026 · täglich 10–19 Uhr" },
+    en: { kicker:"Landscape Photography", mail:"E-mail",
+          bio:"Landscape and mountain photographer based in Munich. I photograph light in the mountains – between sunrise, mist and stars.",
+          expo:"Exhibition · Immathalle, TUM, Munich", dates:"10–22 November 2026 · daily 10 am – 7 pm" },
+    pl: { kicker:"Fotografia krajobrazowa", mail:"E-mail",
+          bio:"Fotograf krajobrazu i gór z Monachium. Fotografuję światło w górach – między wschodem słońca, mgłą a gwiazdami.",
+          expo:"Wystawa · Immathalle TUM, Monachium", dates:"10–22 listopada 2026 · codziennie 10–19" },
+    es: { kicker:"Fotografía de paisaje", mail:"Correo",
+          bio:"Fotógrafo de paisaje y montaña con base en Múnich. Fotografío la luz en las montañas: entre el amanecer, la niebla y las estrellas.",
+          expo:"Exposición · Immathalle, TUM, Múnich", dates:"10–22 de noviembre de 2026 · todos los días 10–19 h" },
+    pt: { kicker:"Fotografia de paisagem", mail:"E-mail",
+          bio:"Fotógrafo de paisagens e montanhas baseado em Munique. Fotografo a luz nas montanhas – entre o nascer do sol, a névoa e as estrelas.",
+          expo:"Exposição · Immathalle, TUM, Munique", dates:"10–22 de novembro de 2026 · diariamente, 10h–19h" },
+    it: { kicker:"Fotografia di paesaggio", mail:"E-mail",
+          bio:"Fotografo di paesaggi e montagna con base a Monaco di Baviera. Fotografo la luce in montagna – tra alba, nebbia e stelle.",
+          expo:"Mostra · Immathalle, TUM, Monaco di Baviera", dates:"10–22 novembre 2026 · tutti i giorni 10–19" },
+    fr: { kicker:"Photographie de paysage", mail:"E-mail",
+          bio:"Photographe de paysages et de montagne basé à Munich. Je photographie la lumière en montagne – entre lever du soleil, brume et étoiles.",
+          expo:"Exposition · Immathalle, TUM, Munich", dates:"10–22 novembre 2026 · tous les jours 10h–19h" }
+  };
+  function setLang(l) {
+    if (!T[l]) l = "en";
+    document.documentElement.lang = l;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { el.textContent = T[l][el.dataset.i18n]; });
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.dataset.set === l ? "true" : "false");
+    });
+    try { localStorage.setItem("lang", l); } catch (e) {}
+  }
   (function () {
-    var root = document.documentElement;
-    function set(l) {
-      root.lang = l;
-      document.querySelectorAll('.lang button').forEach(function (b) {
-        b.setAttribute('aria-pressed', b.dataset.set === l ? 'true' : 'false');
-      });
+    var saved = null;
+    try { saved = localStorage.getItem("lang"); } catch (e) {}
+    var pick = saved;
+    if (!pick) {
+      var prefs = navigator.languages || [navigator.language || "en"];
+      for (var i = 0; i < prefs.length && !pick; i++) {
+        var c = (prefs[i] || "").slice(0, 2).toLowerCase();
+        if (T[c]) pick = c;
+      }
     }
-    var nav = (navigator.language || 'de').toLowerCase();
-    set(nav.indexOf('de') === 0 ? 'de' : 'en');
-    document.querySelectorAll('.lang button').forEach(function (b) {
-      b.addEventListener('click', function () { set(b.dataset.set); });
+    setLang(pick || "en");
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.addEventListener("click", function () { setLang(b.dataset.set); });
     });
   })();
 </script>
