@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Harnot;Max;;;
+FN:Max Harnot
+TITLE:Landscape Photographer
+EMAIL;TYPE=INTERNET:maxharnot@gmail.com
+item1.URL:https://maxharnot.github.io
+item1.X-ABLabel:Website
+item2.URL:https://www.instagram.com/maxharnot/
+item2.X-ABLabel:Instagram
+END:VCARD
